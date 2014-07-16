@@ -8,10 +8,11 @@ The class of NetMat can recover these problem, and can output buffers with low l
 
 
 call the file (NetMat.exe) for demo
-*recver side
-  NetMat.exe
-*sender side
-  NetMat.exe 1
+===================================
+* recver side  
+  NetMat.exe  
+* sender side  
+  NetMat.exe 1  
   
   
 
