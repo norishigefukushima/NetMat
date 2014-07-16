@@ -9,7 +9,7 @@ The class of NetMat can recover these problem, and can output buffers with low l
 
 Demo
 ====
-call the file (NetMat.exe) for demo  
+call the file (NetMat.exe) for demo. main.cpp is a sample code of this demo.  
 * recver side  
   NetMat.exe  
 * sender side  
