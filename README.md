@@ -7,17 +7,17 @@ The class use UDP for real-time communication.Unlike using TCP/IP, UDP comunicat
 The class of NetMat can recover these problem, and can output buffers with low latency.  
 We can send Mat class with/without compression (jpg, png, ppm format).  
 
-sending a Mat with JPG (quality factor 80).  
+Ex 1) sending a Mat with JPG (quality factor 80).  
 
-        NetMat.sendMat(src, CV_IMWRITE_JPEG_QUALITY, 80);
+    NetMat.sendMat(src, CV_IMWRITE_JPEG_QUALITY, 80);
 
-sending a Mat with PNG (DEFAULT option).  
+Ex 2) sending a Mat with PNG (DEFAULT option).  
 
-     NetMat.sendMat(src, CV_IMWRITE_PNG_COMPRESSION, 0);  
+    NetMat.sendMat(src, CV_IMWRITE_PNG_COMPRESSION, 0);  
      
-sending a Mat with PPM . 
+Ex 3) sending a Mat with PPM . 
 
-     NetMat.sendMat(src, CV_IMWRITE_PXM_BINARY);  
+    NetMat.sendMat(src, CV_IMWRITE_PXM_BINARY);  
 
 Demo
 ====
