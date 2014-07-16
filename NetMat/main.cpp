@@ -70,7 +70,7 @@ void sender()
 	string wname = "sender";
 	namedWindow(wname);
 
-	//0:100 JPEG 101:104 png
+	//1:100 JPEG 101:104 png, 0:RAW(ppm)
 	int q = 80; createTrackbar("q",wname,&q,104);
 
 	int key = 0;
@@ -85,9 +85,9 @@ void sender()
 		int sendsizeimg=0;
 
 		if(q>100)
-		{
 			sendsizeimg = netimg.sendMat(show,CV_IMWRITE_PNG_COMPRESSION,q-100);
-		}
+		else if (q==0)
+			sendsizeimg = netimg.sendMat(show,CV_IMWRITE_PXM_BINARY,0);
 		else
 			sendsizeimg = netimg.sendMat(show,CV_IMWRITE_JPEG_QUALITY,q);
 

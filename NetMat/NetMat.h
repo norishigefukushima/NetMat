@@ -59,7 +59,7 @@ public:
 
 	void waitReady();
 
-	int sendMat(const Mat& src, int compression=CV_IMWRITE_JPEG_QUALITY, int parameter = 100);
+	int sendMat(const Mat& src, int option=CV_IMWRITE_JPEG_QUALITY, int parameter = 100);
 	int64 recvMatIndex(Mat& dest, int64 index, int flags=IMREAD_UNCHANGED);
 	int64 recvMatNext(Mat& dest, int flags=IMREAD_UNCHANGED);
 	int64 recvMatHead(Mat& dest,int flags=IMREAD_UNCHANGED);

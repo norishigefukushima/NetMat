@@ -444,13 +444,13 @@ void NetMat::waitReady()
 	}
 }
 
-int NetMat::sendMat(const Mat& src, int compression, int parameter)
+int NetMat::sendMat(const Mat& src, int option, int parameter)
 {
 	const int64 timestamp = cv::getTickCount();
 	std::vector<uchar> buffer1;
 
 	int pngparam = parameter > 10 ? parameter/10 :parameter;
-	if(compression==CV_IMWRITE_JPEG_QUALITY)
+	if(option==CV_IMWRITE_JPEG_QUALITY)
 	{
 		/*vector<int> param(2);
 		param[0]=CV_IMWRITE_JPEG_QUALITY;
@@ -468,8 +468,7 @@ int NetMat::sendMat(const Mat& src, int compression, int parameter)
 		//memcpy(&buffer1[0],a,s);
 		//delete[] a;
 	}
-
-	else if(compression==CV_IMWRITE_PNG_COMPRESSION)
+	else if(option==CV_IMWRITE_PNG_COMPRESSION)
 	{
 		vector<int> param(4);
 		param[0]=CV_IMWRITE_PNG_COMPRESSION;
@@ -488,6 +487,15 @@ int NetMat::sendMat(const Mat& src, int compression, int parameter)
 
 		imencode(".png",src, buffer1, param);
 	}
+	else if(option==CV_IMWRITE_PXM_BINARY)
+	{
+		vector<int> param(2);
+		param[0]=CV_IMWRITE_PXM_BINARY;
+		param[1]=1;
+
+		imencode(".ppm",src, buffer1, param);
+	}
+
 
 	int sended_size = 0;
 	sended_size = fragmented_send( buffer1,timestamp);
