@@ -3,7 +3,7 @@ NetMat
 
 Communication class of OpenCV Mat class  over UDP for Windows.
 
-The class use UDP for real-time communication.Unlike using TCP/IP, UDP comunication contains packet-loss, flickers of oerdering of packets.  
+The class use UDP for real-time communication.Unlike using TCP/IP, UDP comunication contains packet-loss, flickers in ordering of packets.  
 The class of NetMat can recover these problem, and can output buffers with low latency.  
 We can send Mat class with/without compression (jpg, png, ppm format).  
 
